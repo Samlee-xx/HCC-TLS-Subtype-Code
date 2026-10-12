@@ -1,0 +1,112 @@
+{
+  "figure": "S13",
+  "working_directory": "06-Code",
+  "steps": [
+    {
+      "analysis": "127 non-empty combinations of seven cell-type features",
+      "command": "Rscript Figure7_01_Feature_selection.R",
+      "inputs": [
+        "CODEX_reference/cohort2_tls_features.csv",
+        "CODEX_reference/cohort3_tls_features.csv"
+      ],
+      "feature_scale": "Cell percentages on the 0-100 scale",
+      "score": "Minimum of Cohort2 slide-LOSO AUC and Cohort3 AUC",
+      "selection_rule": "Minimum feature count among combinations with score >= 0.85; ties use higher score, higher mean AUC, then smaller AUC gap.",
+      "output_directory": "result/Figure7_TLSProfiler/01-feature_selection"
+    },
+    {
+      "panels": [
+        "A",
+        "B"
+      ],
+      "command": "Rscript Figure7_02_TLSProfiler.R",
+      "inputs": [
+        "CODEX_reference/cohort2_tls_features.csv",
+        "CODEX_reference/cohort3_tls_features.csv",
+        "model/tlsprofiler_log1p_BTN.json"
+      ],
+      "output_directory": "result/Figure7_TLSProfiler/02-final_model"
+    },
+    {
+      "panels": [
+        "E"
+      ],
+      "commands_in_order": [
+        "python FigureS13_pseudo_mIHC.py",
+        "Rscript FigureS13_pseudo_mIHC_ROC.R"
+      ],
+      "inputs": [
+        "pseudo_mIHC/tls_manifest.csv",
+        "pseudo_mIHC/tls_cell_marker_folds.csv.gz",
+        "pseudo_mIHC/cell_rule.json",
+        "model/tlsprofiler_log1p_BTN.json"
+      ],
+      "output_directory": "result/FigureS13/pseudo_mIHC"
+    },
+    {
+      "panels": [
+        "J"
+      ],
+      "commands_in_order": [
+        "python FigureS13_Cohort6_reference.py",
+        "Rscript FigureS13_Cohort6_ROC.R"
+      ],
+      "inputs": [
+        "Cohort6_validation/tls_composition.csv",
+        "Cohort6_validation/sample_manifest.csv",
+        "Cohort6_validation/reference_parameters.json",
+        "model/tlsprofiler_log1p_BTN.json"
+      ],
+      "output_directory": "result/FigureS13/Cohort6"
+    }
+  ],
+  "optional_cohort6_cell_reconstruction": {
+    "entry_point": "FigureS13_Cohort6_reference.py",
+    "arguments": [
+      "--cell-table PATH",
+      "--membership PATH"
+    ],
+    "cell_table_columns": [
+      "fov",
+      "label",
+      "cell_size",
+      "CD45",
+      "CD20",
+      "CD3",
+      "CD66B"
+    ],
+    "membership_columns": [
+      "slide",
+      "label",
+      "tls_id"
+    ],
+    "cell_table_marker_scale": "Arcsinh-transformed marker intensities.",
+    "input_availability": "Raw clinical mIHC cell tables and images are external. The default workflow starts from the bundled TLS compositions."
+  },
+  "input_units": {
+    "cell_percentages": "0-100; denominator is all included cells within each TLS.",
+    "pseudo_marker_folds": "Marker intensity divided by its base threshold; cell_rule.json supplies the multipliers.",
+    "pseudo_cell_row_id": "Zero-based row index in the source cell table; unique within each cohort/TLS membership.",
+    "pseudo_membership": "Cell centroids intersecting the matched TLS union polygon.",
+    "pseudo_polygon_cell_count": "Polygon count used for eligibility; prediction denominators are calculated from the supplied cell membership."
+  },
+  "reproduction_boundaries": {
+    "pseudo_mIHC": "Starts from matched TLS polygons and segmented cell marker folds. Segmentation, base-threshold estimation and initial TLS matching are upstream inputs.",
+    "cohort6": "TLS-level method comparison using the same TLS population for both methods.",
+    "reference_tables": [
+      "pseudo_mIHC/tls_composition_reference.csv",
+      "Cohort6_validation/cluster_annotation.csv"
+    ],
+    "provenance": "provenance.json"
+  },
+  "verified_runtime": {
+    "Python": "3.10.20",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "R": "4.1.2",
+    "pROC": "1.18.5",
+    "jsonlite": "1.8.4"
+  }
+}

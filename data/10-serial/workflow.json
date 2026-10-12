@@ -1,0 +1,11 @@
+{
+  "working_directory": "Repository root",
+  "commands": [
+    "python \"Figure2_Serial section.py\"",
+    "Rscript \"Figure2_Serial section for plot.R\"",
+    "python \"Figure2_Serial marker panels.py\""
+  ],
+  "optional_training_validation": "python \"Figure2_Serial section.py\" --validate-model",
+  "outputs": "result/Figure2_serial",
+  "reference_predictions": "data/10-serial/reference/serial_TLS_predictions.csv"
+}

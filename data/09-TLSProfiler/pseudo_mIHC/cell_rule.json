@@ -1,0 +1,8 @@
+{
+  "CD45_multiplier": 0.9,
+  "CD20_multiplier": 0.95,
+  "CD3_multiplier": 0.72,
+  "CD66B_multiplier": 0.25,
+  "CD66B_dominance_margin": 4.0,
+  "CD20_over_CD3_dominance_scale": 0.8
+}

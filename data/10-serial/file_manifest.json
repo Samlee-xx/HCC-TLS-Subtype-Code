@@ -1,0 +1,207 @@
+[
+  {
+    "file": "cell_types/cell_type_definitions.csv",
+    "bytes": 955,
+    "sha256": "e7fe3c78e40420a341537d1ef5ebb3c21d97cf07991a22e52585ca43313b5fa8"
+  },
+  {
+    "file": "cell_types/serial_cell_marker_expression.csv.gz",
+    "bytes": 61174657,
+    "sha256": "3f43030f6fd71f1e1b163a06fc00927ce2669b705bea54cc88f7b0d8b38f2f46"
+  },
+  {
+    "file": "cell_types/serial_cell_metadata.csv.gz",
+    "bytes": 16187453,
+    "sha256": "313d7cf9ea3abafffdbb06de5b92a3525528c0c7eebc6a5b76ca6bb845a9e6d3"
+  },
+  {
+    "file": "images/display_parameters.json",
+    "bytes": 766,
+    "sha256": "62473a4872d2690659cb46ef6f48ca41e858deb22cccc9851396fd764f201ad7"
+  },
+  {
+    "file": "images/Figure2M_panels.csv",
+    "bytes": 270,
+    "sha256": "25d396fabd66e078b4293bba0ceaf4e53165acc97f3a5b048a081f2cb27386e5"
+  },
+  {
+    "file": "images/TLS1_Section1/CD20.tif",
+    "bytes": 895874,
+    "sha256": "db91fb0ac5d5680777e38073c62c3ef22602524adee16f94c438a750a21d85a8"
+  },
+  {
+    "file": "images/TLS1_Section1/CD21.tif",
+    "bytes": 497905,
+    "sha256": "bde5d09e8ceb112c1028d908293265267711352a4e111c49ad693893a4dfb65a"
+  },
+  {
+    "file": "images/TLS1_Section1/CD3e.tif",
+    "bytes": 1023002,
+    "sha256": "73a1a30cd5308ed77f7acc4c34f2c851529bcbafbe9e3afa131e45df225205da"
+  },
+  {
+    "file": "images/TLS1_Section1/Ki67.tif",
+    "bytes": 319453,
+    "sha256": "65de602ad80929dc9921fd02357924945bd715d06a5a5d30cebf3d275e5c7386"
+  },
+  {
+    "file": "images/TLS1_Section1/region.json",
+    "bytes": 429,
+    "sha256": "bd213fe82da6f9b821aef8ca8a57627efc182cb34672f57bd745f159f80171ad"
+  },
+  {
+    "file": "images/TLS1_Section16/CD20.tif",
+    "bytes": 1035680,
+    "sha256": "07a63fad275d390f70718422272862dedca6b257711a87460ae07f6c2f8d3ee1"
+  },
+  {
+    "file": "images/TLS1_Section16/CD21.tif",
+    "bytes": 687405,
+    "sha256": "5baedf2d6058a704573b695fb3fbb957ef24814bc9b28533c5d4ceb961901cf7"
+  },
+  {
+    "file": "images/TLS1_Section16/CD3e.tif",
+    "bytes": 1102917,
+    "sha256": "173ebfe4ce1357c264986c16e05dda8bba61d3e60273d96dfcd439f397647230"
+  },
+  {
+    "file": "images/TLS1_Section16/Ki67.tif",
+    "bytes": 448318,
+    "sha256": "0f1e3dfbbcd9fa793a090d80506b844d60b9130af45c28db6a9452aa50f77365"
+  },
+  {
+    "file": "images/TLS1_Section16/region.json",
+    "bytes": 429,
+    "sha256": "ef88fcb9cb020fba800507636f22d2a2fd7e8ea05f806c3f14ed619d343f46a9"
+  },
+  {
+    "file": "images/TLS1_Section28/CD20.tif",
+    "bytes": 595880,
+    "sha256": "88a580ba2adffe9f42b718dcaa5f229aa560d2459000fafcd97b5df3089599ae"
+  },
+  {
+    "file": "images/TLS1_Section28/CD21.tif",
+    "bytes": 286310,
+    "sha256": "febd2c0174488e8549431bbbd7464238aea67e483cae475ec8dcb439e0b06e48"
+  },
+  {
+    "file": "images/TLS1_Section28/CD3e.tif",
+    "bytes": 673289,
+    "sha256": "90a36bc30b5205af587382a2949f577de6a4be0312fcb7f742c371145fb1b9de"
+  },
+  {
+    "file": "images/TLS1_Section28/Ki67.tif",
+    "bytes": 163722,
+    "sha256": "096301e983d7615c1ea7ba1399cb4bf904d6ea881d0ad793ce54c54b722b1e5c"
+  },
+  {
+    "file": "images/TLS1_Section28/region.json",
+    "bytes": 432,
+    "sha256": "1afa193b8d668ea76c292fc63f84ad4f8fe51dce6f072948e72f859201a51ac1"
+  },
+  {
+    "file": "images/TLS1_Section37/CD20.tif",
+    "bytes": 523809,
+    "sha256": "b0344376779190d430851f2f2762d8a4403fe048b49e1212ea78d4f354ee5840"
+  },
+  {
+    "file": "images/TLS1_Section37/CD21.tif",
+    "bytes": 288588,
+    "sha256": "eb3f8d8deb544cfb24876d5a949ac1d55acb2e867f234a3092731b71c21c2df8"
+  },
+  {
+    "file": "images/TLS1_Section37/CD3e.tif",
+    "bytes": 719966,
+    "sha256": "c70e3eb7451e133df90092f963999e433704ff7dd1ac0b37a8a1ee2c7d0fc13b"
+  },
+  {
+    "file": "images/TLS1_Section37/Ki67.tif",
+    "bytes": 201558,
+    "sha256": "f773fd15bfac7d07e883abdf7d54347bbb3313fd1f1b1f107a903c5fe8a94dac"
+  },
+  {
+    "file": "images/TLS1_Section37/region.json",
+    "bytes": 433,
+    "sha256": "65148e87aab1187768b290dd41897b4b649b1d4734e6b0e24bb9cc911d30adff"
+  },
+  {
+    "file": "metadata.json",
+    "bytes": 2875,
+    "sha256": "9c59a0286f9a7b0ee700fa069fa19c058e65f7c57737b424cf74e3ebb2025913"
+  },
+  {
+    "file": "model/model_parameters.json",
+    "bytes": 768,
+    "sha256": "e7aea526a248ed0b264138ac7a3a3ed6ff2317e279091b02842d9b8f40b92925"
+  },
+  {
+    "file": "model/scaler_and_coefficients.csv",
+    "bytes": 750,
+    "sha256": "0a6a3b67bab7e995243bb4e10838e9e9359bb6abe02592d104b9333400f1a316"
+  },
+  {
+    "file": "model/serial_TLS_classifier.joblib",
+    "bytes": 2205,
+    "sha256": "4ec28ccaebd354a06b4ac307c08391987fcf73499659ccfbaa988094e63877d9"
+  },
+  {
+    "file": "model/training_TLS_composition.csv",
+    "bytes": 231495,
+    "sha256": "4abaf9cba3e8997fe81497e9a279cb6f77d2f866401e06e49e9d964341947198"
+  },
+  {
+    "file": "reference/Figure2L_serial_TLS_probability.pdf",
+    "bytes": 12437,
+    "sha256": "51fa8345590c58499354b99e65b1c3fdb64ea32e12546daa76bbf944234e129a"
+  },
+  {
+    "file": "reference/Figure2L_serial_TLS_probability.png",
+    "bytes": 44836,
+    "sha256": "e795383ead174611fe73ff4bbb28fe19dfae2d19c5cc251439409dcc98d65fed"
+  },
+  {
+    "file": "reference/Figure2M_serial_TLS1_markers.pdf",
+    "bytes": 2847781,
+    "sha256": "0a86fa847e0f5f14fc949c33b05f89cd6588882334679644f84e168f101be82c"
+  },
+  {
+    "file": "reference/Figure2M_serial_TLS1_markers.png",
+    "bytes": 3363342,
+    "sha256": "9058d449159ec74ff0cf00dae68474288942e23457e63d7559ee11941b6c264f"
+  },
+  {
+    "file": "reference/serial_TLS_classifier_LOSO_metrics.csv",
+    "bytes": 142,
+    "sha256": "9b444417d6a62ed79b65d5bafe90df7961a2669146b1a55b27a6d665586e701b"
+  },
+  {
+    "file": "reference/serial_TLS_classifier_LOSO_predictions.csv",
+    "bytes": 53351,
+    "sha256": "5b890a98c8107353e3bf64f975f122a706f861120d765d86fae6bbda3ba3c4b7"
+  },
+  {
+    "file": "reference/serial_TLS_predictions.csv",
+    "bytes": 5927,
+    "sha256": "b5145377df4336ff2fb146abdfc2203b276d6b58792707271d5e5f167203094c"
+  },
+  {
+    "file": "software_versions.json",
+    "bytes": 231,
+    "sha256": "fbb7dd1debf2444f1a76a18d056450274f137bf0706c2e09e2f2f768c56b8db3"
+  },
+  {
+    "file": "TLS/FOV_manifest.csv",
+    "bytes": 5347,
+    "sha256": "7bec3c5cff91cf4bc8fecaa365f68715cb883497280a936a39fac04964feffd1"
+  },
+  {
+    "file": "TLS/serial_TLS_composition.csv",
+    "bytes": 35906,
+    "sha256": "a4fe98aafb093e64960a437edc92d17cffc684a4e450d1291312574f35380e0a"
+  },
+  {
+    "file": "workflow.json",
+    "bytes": 434,
+    "sha256": "1f1dd49fadfc3d4baa26416106623da27fbb7c33ea262346c8db49615d7236e7"
+  }
+]

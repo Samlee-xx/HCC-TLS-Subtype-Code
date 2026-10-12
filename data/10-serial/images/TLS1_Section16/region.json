@@ -1,0 +1,21 @@
+{
+  "TLS": "TLS1",
+  "figure_label": "TLS 1",
+  "section_index": 6,
+  "section_number": 16,
+  "source_image": "16th tls_Scan1.qptiff - resolution #1",
+  "channels": [
+    "CD3e",
+    "CD21",
+    "Ki67",
+    "CD20"
+  ],
+  "downsample": 1.0,
+  "x": 11190,
+  "y": 2008,
+  "width": 1723,
+  "height": 1214,
+  "pixel_width_um": 0.5074730144132565,
+  "pixel_height_um": 0.5074730144132565,
+  "fov": "TLS1-Section6"
+}

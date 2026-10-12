@@ -1,0 +1,18 @@
+cell_type,cell_group,classifier_feature,n_fov_cells,n_tls_cells,cell_type_label
+B,B cell,B,95725,92270,B cell
+B-CD21,B cell,B,6202,6201,CD21-positive B cell
+B-GC,B cell,B,11434,11434,Germinal-centre B cell
+Bile_Duct,Epithelium,Cholangiocyte_like,15212,12137,Bile duct epithelial cell
+CD3T,T cell,not_used,8616,6547,CD3-positive T cell
+CD4T,T cell,CD4T,84041,71246,CD4 T cell
+CD8T,T cell,CD8T,76549,63809,CD8 T cell
+DC,Myeloid,DC,9957,8325,Dendritic cell
+Endothelial,Endothelium,Endothelial,84127,41261,Endothelial cell
+Fibroblast,Stroma,Fibroblast,58358,29525,Fibroblast
+HEV,Endothelium,HEV,7761,3441,High endothelial venule cell
+Lymphatic,Endothelium,Lymphatic,7226,3972,Lymphatic endothelial cell
+Macrophage,Myeloid,Macrophage,52258,30302,Macrophage
+Neutrophil,Myeloid,Neutrophil,82803,53729,Neutrophil
+PC,B cell,B,23769,22832,Plasma cell
+Tumor,Epithelium,not_used,86434,0,Tumor cell
+Unassign,Unassigned,not_used,982,0,Unassigned cell

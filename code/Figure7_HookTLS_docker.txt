@@ -1,0 +1,146 @@
+HookNet-TLS Docker workflow for Cohort 7
+
+Software and model
+
+- Repository: https://github.com/DIAGNijmegen/pathology-hooknet-tls
+- Repository commit: 573680a5b962b1acae88cdeb6f8b1c9597570539
+- Model weights: https://zenodo.org/records/10614942/files/weights.h5
+- Inference base image: tensorflow/tensorflow:2.9.3-gpu
+- ASAP version: 2.1
+- Spatial resolutions: 0.5 and 2.0 micrometer/pixel
+- Patch size: 1244 x 1244 pixels at both resolutions
+- Patch overlap: 220 pixels
+
+The workflow was run in Windows PowerShell with Docker Desktop in Linux-container
+mode and NVIDIA GPU support. KFB files are not read directly by HookNet-TLS. They
+must first be converted to SVS. The SVS files are then converted to dense tiled
+pyramidal TIFF files and paired tissue-background masks by the preprocessing image.
+
+
+1. Prepare the repository
+
+git clone https://github.com/DIAGNijmegen/pathology-hooknet-tls.git
+Set-Location -LiteralPath ".\pathology-hooknet-tls"
+git checkout 573680a5b962b1acae88cdeb6f8b1c9597570539
+
+# Download weights.h5 from Zenodo and place it in the repository root.
+Get-FileHash -LiteralPath ".\weights.h5" -Algorithm SHA256
+
+
+2. Build the Docker images
+
+docker build -t hooknet-preprocess .\preprocessing
+docker build -t hooknet-tls .
+
+docker image inspect hooknet-preprocess --format "{{.Id}}"
+docker image inspect hooknet-tls --format "{{.Id}}"
+
+
+3. Confirm GPU access and warm up the model
+
+docker run --rm --gpus all tensorflow/tensorflow:2.9.3-gpu nvidia-smi
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\warmup_jit.ps1" `
+  -Iterations 1
+
+The first model call compiles the TensorFlow/CUDA kernels and is therefore slower
+than subsequent slide processing. The CUDA cache is retained in .\cuda_cache.
+
+
+4. Preprocess one SVS slide
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\run_preprocess.ps1" `
+  -InputSvs ".\input_svs\sample_001.svs" `
+  -OutputDir ".\batch_output\cohort7\preprocessed\sample_001" `
+  -TargetSpacing 0.5 `
+  -Tolerance 0.02
+
+The expected outputs are sample_001.tif and sample_001_mask.tif.
+
+
+5. Run one slide with the GPU
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\run_inference.ps1" `
+  -ImagePath ".\batch_output\cohort7\preprocessed\sample_001\sample_001.tif" `
+  -MaskPath ".\batch_output\cohort7\preprocessed\sample_001\sample_001_mask.tif" `
+  -OutputDir ".\batch_output\cohort7\inference\sample_001" `
+  -Cpus 1
+
+
+6. Run the Cohort 7 batch
+
+$InputDir = Resolve-Path ".\input_svs"
+$OutputRoot = Join-Path (Get-Location) "batch_output\cohort7"
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\run_batch_beijing.ps1" `
+  -InputDir $InputDir `
+  -OutputRoot $OutputRoot `
+  -Cpus 1
+
+Existing complete preprocessing and inference outputs are skipped automatically.
+Use -ForcePreprocess or -ForceInference only when those outputs must be regenerated.
+
+
+7. Monitor the batch
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\monitor_batch_beijing.ps1" `
+  -OutputRoot $OutputRoot `
+  -IntervalSeconds 60
+
+# One-time status check
+powershell.exe -NoProfile -ExecutionPolicy Bypass `
+  -File ".\monitor_batch_beijing.ps1" `
+  -OutputRoot $OutputRoot `
+  -Once
+
+The monitor reports completed preprocessing and inference steps, recent log rows,
+active Docker containers, and NVIDIA GPU utilization.
+
+
+8. Patient and TLS assignment
+
+For slides containing two spatially separated specimens, HookNet candidates are
+assigned to the corresponding specimen using tissue-mask connected components and
+their spatial locations. The slide 1115000-1-1123045-1 is treated as patient
+1115000 only. The three prespecified quality-control exclusions are 1038607,
+1006958, and 1049703.
+
+
+9. TLS and GC classification
+
+Final thresholds:
+
+- TLS confidence value: 192
+- TLS confidence count: 62
+- GC confidence value: 245
+- GC confidence count: 60
+
+GC candidates are retained only when they overlap a retained TLS region. A patient
+is classified as GC-positive when at least one retained TLS contains a retained GC,
+as GC-negative when at least one TLS but no GC-positive TLS is detected, and as
+non-TLS when no TLS is retained.
+
+
+10. Final Cohort 7 result
+
+                    R    NR    Total
+non-TLS            19    56      75
+GC-negative        16    28      44
+GC-positive         0     1       1
+
+Two-sided Fisher exact tests:
+
+- GC-negative versus non-TLS: odds ratio 1.6842, P = 0.2176
+- GC-positive versus non-TLS: odds ratio 0, P = 1.0000
+
+The patient-level table used for the final analysis is:
+
+data\07-HookNet_TLS\Cohort7_HookNet_TLS_patient_classification.csv
+
+The response analysis is reproduced by:
+
+Rscript .\Figure7_03_Hook_TLS.R

@@ -1,0 +1,32 @@
+{
+  "random_seed": 20260922,
+  "sample_per_slide": 2000,
+  "markers": [
+    "CD45",
+    "CD20",
+    "CD3",
+    "CD66B"
+  ],
+  "cell_size_min_exclusive": 150,
+  "cell_size_max_exclusive": 1500,
+  "scaler_quantiles": [
+    5,
+    95
+  ],
+  "n_clusters": 32,
+  "kmeans_n_init": 10,
+  "kmeans_max_iter": 300,
+  "kmeans_batch_size": 4096,
+  "kmeans_reassignment_ratio": 0.01,
+  "gmm_components": {
+    "CD45": 2,
+    "CD20": 3,
+    "CD3": 3,
+    "CD66B": 3
+  },
+  "gmm_n_init": 5,
+  "gmm_max_iter": 500,
+  "immune_posterior_cutoff": 0.5,
+  "lineage_posterior_cutoff": 0.5,
+  "bootstrap_replicates": 2000
+}

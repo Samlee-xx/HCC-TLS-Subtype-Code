@@ -1,0 +1,19 @@
+# Preserve supplied data and script bytes (including existing line endings).
+* -text
+
+# Store data files of at least 10 MiB in Git LFS.
+data/01-ST_TLS/ST_TLS_461.rds filter=lfs diff=lfs merge=lfs -text
+data/02-CODEX_Cohort2/cell_types/final_codex_celltyped_obs.csv filter=lfs diff=lfs merge=lfs -text
+data/02-CODEX_Cohort2/CN/cn_cell_assignment_k9_final.csv filter=lfs diff=lfs merge=lfs -text
+data/02-CODEX_Cohort2/CN/upstream_696/DBSCAN_TLS_cells_filtered_with_L2_after_DC_refine.csv.gz filter=lfs diff=lfs merge=lfs -text
+data/02-CODEX_Cohort2/TLS/dbscan_tls_cells_final.csv.gz filter=lfs diff=lfs merge=lfs -text
+data/03-CODEX_Cohort3/cell_types/final_cell_type_table.csv filter=lfs diff=lfs merge=lfs -text
+data/04-Visium_HD/axis/selected_axis_cholangiocyte_similarity.csv filter=lfs diff=lfs merge=lfs -text
+data/04-Visium_HD/cell_types/sample_bins_with_celltype_for_axis.csv filter=lfs diff=lfs merge=lfs -text
+data/05-cross_K/Cohort3/cell_coordinates_for_ripley_k.csv filter=lfs diff=lfs merge=lfs -text
+data/06-ROE/CODEX_celltype/tls_delaunay_layer_cells_final.csv filter=lfs diff=lfs merge=lfs -text
+data/06-ROE/CODEX_CN/cn_tls_layer_cell_table_final.csv filter=lfs diff=lfs merge=lfs -text
+data/08-CosMx/CosMx_TLS.h5ad filter=lfs diff=lfs merge=lfs -text
+data/09-TLSProfiler/pseudo_mIHC/tls_cell_marker_folds.csv.gz filter=lfs diff=lfs merge=lfs -text
+data/10-serial/cell_types/serial_cell_marker_expression.csv.gz filter=lfs diff=lfs merge=lfs -text
+data/10-serial/cell_types/serial_cell_metadata.csv.gz filter=lfs diff=lfs merge=lfs -text

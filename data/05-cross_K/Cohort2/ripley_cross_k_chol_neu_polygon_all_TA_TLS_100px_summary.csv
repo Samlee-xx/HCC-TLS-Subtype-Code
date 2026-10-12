@@ -1,0 +1,2 @@
+n_tls_input,n_tls_valid,n_tls_excluded,n_bf_tls_valid,n_tnc_tls_valid,target_radius_pixel,minimum_cells_per_type,median_normalized_difference,mean_normalized_difference,q25_normalized_difference,q75_normalized_difference,n_positive,percentage_positive,one_sample_wilcoxon_statistic,one_sample_wilcoxon_p_value
+667,369,298,170,199,100,3,0.124309294408509,0.217521358826745,-0.134702553937772,0.46499982119302,229,62.059620596206,46803,6.43474811792087e-10

@@ -1,0 +1,21 @@
+{
+  "TLS": "TLS1",
+  "figure_label": "TLS 1",
+  "section_index": 10,
+  "section_number": 28,
+  "source_image": "28th slide_Scan1.qptiff - resolution #1",
+  "channels": [
+    "CD3e",
+    "CD21",
+    "Ki67",
+    "CD20"
+  ],
+  "downsample": 1.0,
+  "x": 10328,
+  "y": 2377,
+  "width": 1459,
+  "height": 820,
+  "pixel_width_um": 0.5074730144132565,
+  "pixel_height_um": 0.5074730144132565,
+  "fov": "TLS1-Section10"
+}

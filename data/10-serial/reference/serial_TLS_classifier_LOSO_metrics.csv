@@ -1,0 +1,2 @@
+n_training_TLS,n_training_slides,accuracy,balanced_accuracy,roc_auc_TNC_TLS
+667,29,0.8605697151424287,0.8605173189383716,0.9388034188034189

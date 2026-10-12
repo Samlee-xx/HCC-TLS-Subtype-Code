@@ -1,0 +1,54 @@
+{
+  "scope": "Fixed-parameter reproduction of Figure S13. Raw clinical mIHC cells and images are external inputs.",
+  "sources": [
+    {
+      "file": "CODEX_reference/cohort2_tls_features.csv",
+      "rows": 667,
+      "sha256": "1137e13ba9238445e3b42d7622486f7b6a175ad9837068e1fb40ffda959e91db",
+      "source_file": "Cohort1_training_final_with_slide.csv"
+    },
+    {
+      "file": "CODEX_reference/cohort3_tls_features.csv",
+      "rows": 154,
+      "sha256": "0723fb7c73c59f5dcc520de72068c5bc3d40aa46870ec851ca967b4c844ac854",
+      "source_file": "Cohort2_validation_final_with_slide.csv"
+    },
+    {
+      "file": "pseudo_mIHC/tls_manifest.csv",
+      "rows": 325,
+      "sha256": "c91b7070fa0d0702ac7635ca169ebc28337acef080cf1be0284e8edf4ff7aa59",
+      "source_file": "03-tls_features.csv"
+    },
+    {
+      "file": "pseudo_mIHC/tls_composition_reference.csv",
+      "rows": 325,
+      "sha256": "54066b10e979cdfc9e13f2bb41c4e58efa2b641067db58a782b9196a7272d903",
+      "source_file": "38-FINAL_C2_then_C3_predictions.csv"
+    },
+    {
+      "file": "pseudo_mIHC/tls_cell_marker_folds.csv.gz",
+      "rows": 946643,
+      "sha256": "a829474f21cbddec2b72aa20839e6d63830ec32f10fbe810812fd30fc99a3c67",
+      "source_file": "01-cell_type_assignment.csv.gz"
+    },
+    {
+      "file": "Cohort6_validation/tls_composition.csv",
+      "rows": 184,
+      "sha256": "d78daac49e23eb606d5626459db637041eaa9e0c51265ca8f9c0b2c47fd29419",
+      "source_file": "11-conventional_tls_level_comparison.csv"
+    },
+    {
+      "file": "Cohort6_validation/cluster_annotation.csv",
+      "rows": 32,
+      "sha256": "cbc8f44f776fca136bd7c0bf022093d00d399fa806de5247ae4c789759c189f4",
+      "source_file": "12-conventional_cluster_annotation.csv"
+    },
+    {
+      "file": "Cohort6_validation/sample_manifest.csv",
+      "rows": 103,
+      "sha256": "b2fc1b3aebaf1e99fe39f776747657b2e388e71409f8800cf03560bf27bd2cfd",
+      "source_file": "01-cohort6_clinical_tls.csv"
+    }
+  ],
+  "missing_marker_values": 0
+}

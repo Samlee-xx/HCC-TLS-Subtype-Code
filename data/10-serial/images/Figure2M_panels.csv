@@ -1,0 +1,5 @@
+TLS,section_number,image_directory,display_order,figure_maturation_stage,fov
+TLS1,1,TLS1_Section1,1,SFL-TLS,TLS1-Section1
+TLS1,16,TLS1_Section16,2,SFL-TLS,TLS1-Section6
+TLS1,28,TLS1_Section28,3,PFL-TLS,TLS1-Section10
+TLS1,37,TLS1_Section37,4,Agg-TLS,TLS1-Section13

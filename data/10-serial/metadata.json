@@ -1,0 +1,59 @@
+{
+  "n_TLS": 7,
+  "n_sections_per_TLS": 17,
+  "n_FOV": 119,
+  "n_FOV_cells": 711454,
+  "n_TLS_member_cells": 457031,
+  "cell_metadata": {
+    "file": "cell_types/serial_cell_metadata.csv.gz",
+    "cell_id": "Unique identifier: FOV ID followed by -Cell and the segmentation label; join key for marker expression",
+    "TLS": "Figure 2L TLS identifier, TLS1 through TLS7",
+    "fov": "Figure TLS ID followed by the sampled section index",
+    "slide": "Original slide identifier",
+    "section_index": "Sampled section index, 1 to 17",
+    "section_number": "Physical section number: 1 + 3 * (section_index - 1)",
+    "z_position_um": "Depth relative to section 1: (section_number - 1) * 5",
+    "label": "Segmentation label within the original FOV",
+    "centroid_x": "FOV-local horizontal pixel coordinate",
+    "centroid_y": "FOV-local vertical pixel coordinate, increasing downwards",
+    "cell_type": "Final cell annotation used to calculate the serial TLS composition",
+    "cell_group": "Broad lineage derived from cell_type",
+    "in_tls": "True for cells belonging to the annotated TLS cell set; other FOV cells are excluded from TLS composition"
+  },
+  "marker_expression": {
+    "file": "cell_types/serial_cell_marker_expression.csv.gz",
+    "source": "adata_final_l2.h5ad X matrix",
+    "n_markers": 20,
+    "values": "Arcsinh-transformed cell marker expression as stored in the source X matrix"
+  },
+  "TLS_composition": {
+    "file": "TLS/serial_TLS_composition.csv",
+    "units": "Fraction of TLS member cells, from 0 to 1",
+    "denominator": "All cells with in_tls=True, including CD3T",
+    "classifier_input": "Percentage, from 0 to 100; B combines B, B-CD21, B-GC and PC; Bile_Duct maps to Cholangiocyte_like",
+    "CD3T": "Included in the denominator, with no separate classifier feature"
+  },
+  "classifier": {
+    "file": "model/serial_TLS_classifier.joblib",
+    "training_data": "model/training_TLS_composition.csv",
+    "n_training_TLS": 667,
+    "n_training_slides": 29,
+    "n_features": 11,
+    "probability_cutoff": 0.5,
+    "training_validation": "Leave one slide out; scaling and fitting performed on the training slides within each fold"
+  },
+  "fluorescence_images": {
+    "panels": "images/Figure2M_panels.csv",
+    "display": "images/display_parameters.json",
+    "channels": [
+      "CD3e",
+      "CD21",
+      "Ki67",
+      "CD20"
+    ],
+    "intensity": "Native QPTIFF channel values exported at downsample 1, stored as losslessly compressed uint8 TIFF",
+    "coordinates": "region.json gives the FOV bounding rectangle in full-slide pixels and pixel calibration",
+    "maturation_labels": "Figure 2M annotations, supplied for the four displayed sections",
+    "display_scope": "Full FOVs with common channel limits; manuscript crop and display settings are not available"
+  }
+}

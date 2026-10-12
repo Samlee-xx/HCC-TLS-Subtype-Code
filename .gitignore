@@ -1,0 +1,15 @@
+# Local environments, caches, and generated outputs
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+.Rhistory
+.RData
+.Rproj.user/
+/result/
+/results/
+/outputs/
+code/result/
+code/results/
+.DS_Store
+Thumbs.db

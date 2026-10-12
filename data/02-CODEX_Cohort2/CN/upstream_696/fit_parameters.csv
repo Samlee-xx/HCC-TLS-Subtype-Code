@@ -1,0 +1,9 @@
+parameter,value
+K,9
+K_mode,fixed_archived_model
+neighbor_radius_pixels,100
+n_init,20
+batch_size,20000
+random_state,20260618
+fit_regions,696
+final_manuscript_TLS,667

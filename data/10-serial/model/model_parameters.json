@@ -1,0 +1,37 @@
+{
+  "model": "StandardScaler and L2 logistic regression",
+  "features": [
+    "B",
+    "CD4T",
+    "CD8T",
+    "Cholangiocyte_like",
+    "DC",
+    "Endothelial",
+    "Fibroblast",
+    "HEV",
+    "Lymphatic",
+    "Macrophage",
+    "Neutrophil"
+  ],
+  "classes": [
+    "BF-TLS",
+    "TNC-TLS"
+  ],
+  "positive_class": "TNC-TLS",
+  "probability_cutoff": 0.5,
+  "intercept": 0.011709722134193487,
+  "C": 1.0,
+  "solver": "liblinear",
+  "class_weight": "balanced",
+  "max_iter": 5000,
+  "random_seed": 20260710,
+  "feature_units": "percentage_0_to_100",
+  "B_lineage": [
+    "B",
+    "B-CD21",
+    "B-GC",
+    "PC"
+  ],
+  "sklearn_version": "1.7.2",
+  "joblib_sha256": "4ec28ccaebd354a06b4ac307c08391987fcf73499659ccfbaa988094e63877d9"
+}
