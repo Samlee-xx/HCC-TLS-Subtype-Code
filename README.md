@@ -42,36 +42,6 @@ Scripts are named by the associated figure and analysis. The `data/` directory c
 | `10-serial` | Serial-section TLS data, model files, marker panels, and reference outputs |
 | `11-CODEX_Cohort4` | Cohort 4 TLS and clinical-analysis inputs |
 
-## Downloading the data
-
-Large data files are tracked with [Git Large File Storage (Git LFS)](https://git-lfs.com/). Install Git LFS before cloning, then run:
-
-```bash
-git lfs install
-git clone https://github.com/Samlee-xx/HCC-TLS-Subtype-Code.git
-cd HCC-TLS-Subtype-Code
-git lfs pull
-```
-
-Use Git with LFS to obtain the complete data files. Without LFS, some files may be downloaded as small pointer files rather than their actual contents.
-
-## Running the analyses
-
-The scripts are individual, figure-oriented analyses rather than a single end-to-end pipeline. They use both the processed inputs included here and external inputs referenced in the scripts. Raw sequencing data, complete source images, and all upstream preprocessing steps are not bundled with this repository.
-
-Run commands from the repository root and check the input/output configuration at the beginning of each script. Some scripts retain study-specific absolute paths or defaults that assume `data/` is beside the script. Supply explicit paths where command-line arguments are supported, or update the path variables for your local environment.
-
-For example, the following commands specify input and output directories for the corresponding scripts:
-
-```bash
-python code/Figure1_DBSCAN_TLS.py --data-dir data --output-dir result/Figure1_DBSCAN
-Rscript code/Figure7_02_TLSProfiler.R data/09-TLSProfiler result/Figure7_TLSProfiler/02-final_model
-```
-
-Install the R/Python packages imported by the analysis you intend to run. Workflow metadata, model parameters, and software-version information are provided within relevant data subdirectories where available. CIBERSORTx processing and HookNet-TLS inference additionally require their respective external tools and inputs.
-
-Saved reference outputs support comparison with newly generated results; they should not be interpreted as independent reruns. Final subtype annotations are provided for downstream analyses, and their presence alone does not reproduce all upstream annotation decisions. Model-selection, calibration, and assessment steps should be interpreted according to the accompanying scripts and metadata.
-
 ## Contact
 
 For code-related questions, please contact the first author, Shuai Li, at [21110880009@m.fudan.edu.cn](mailto:21110880009@m.fudan.edu.cn).
