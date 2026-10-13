@@ -22,7 +22,7 @@ The figure-oriented scripts cover:
 ```text
 HCC-TLS-Subtype-Code/
 ├── code/       # R and Python analysis scripts and workflow notes
-├── data/       # Selected processed inputs, annotations, model files, and reference outputs
+├── data/       # Processed inputs, annotations, model files, and reference outputs
 └── README.md
 ```
 
